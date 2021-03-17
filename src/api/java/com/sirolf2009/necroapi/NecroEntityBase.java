@@ -44,7 +44,7 @@ public abstract class NecroEntityBase {
 	/** Use this to define the default recipes */
 	public void initDefaultRecipes(Object... items) {
 		Object headItem = null, torsoItem = null, armItem = null, legItem = null;
-		if(items.length==1)
+		if (items.length == 1)
 			headItem = torsoItem = armItem = legItem = items[0];
 		else {
 			headItem = items[0];
@@ -52,35 +52,25 @@ public abstract class NecroEntityBase {
 			armItem = items[2];
 			legItem = items[3];
 		}
-		headRecipe = new Object[] { "SSSS", "SBFS", "SEES", 
-				'S', new ItemStack(organs, 1, 4), // skin
-				'E', Item.spiderEye, 
-				'F', headItem, 
-				'B', new ItemStack(organs, 1, 0) //brain
+		headRecipe = new Object[] { "SSSS", "SBFS", "SEES", 'S', new ItemStack(organs, 1, 4), // skin
+				'E', Item.spiderEye, 'F', headItem, 'B', new ItemStack(organs, 1, 0) // brain
 		};
-		torsoRecipe = new Object[] { " LL ", "BHUB", "LEEL", "BLLB",
-				'L', new ItemStack(organs, 1, 4), // skin
-				'E', torsoItem, 
-				'H', new ItemStack(organs, 1, 1), // heart
+		torsoRecipe = new Object[] { " LL ", "BHUB", "LEEL", "BLLB", 'L', new ItemStack(organs, 1, 4), // skin
+				'E', torsoItem, 'H', new ItemStack(organs, 1, 1), // heart
 				'U', new ItemStack(organs, 1, 3), // lungs
 				'B', Item.bone };
-		armRecipe = new Object[] { "LLLL", "BMEB", "LLLL",
-				'L', new ItemStack(organs, 1, 4), // skin
-				'E', armItem, 
-				'M', new ItemStack(organs, 1, 2), // muscle
+		armRecipe = new Object[] { "LLLL", "BMEB", "LLLL", 'L', new ItemStack(organs, 1, 4), // skin
+				'E', armItem, 'M', new ItemStack(organs, 1, 2), // muscle
 				'B', Item.bone };
-		legRecipe = new Object[] { "LBBL", "LMML", "LEEL", "LBBL", 
-				'L', new ItemStack(organs, 1, 4), // skin
-				'E', legItem, 
-				'M', new ItemStack(organs, 1, 2), // muscle
+		legRecipe = new Object[] { "LBBL", "LMML", "LEEL", "LBBL", 'L', new ItemStack(organs, 1, 4), // skin
+				'E', legItem, 'M', new ItemStack(organs, 1, 2), // muscle
 				'B', Item.bone };
 	}
 
 	/**
 	 * Use this method to initialize all the ModelRenderers for your mobs head
 	 * 
-	 * @param model
-	 *            - the model
+	 * @param model - the model
 	 */
 	public BodyPart[] initHead(ModelBase model) {
 		return null;
@@ -89,8 +79,7 @@ public abstract class NecroEntityBase {
 	/**
 	 * Use this method to initialize all the ModelRenderers for your mobs torso
 	 * 
-	 * @param model
-	 *            - the model
+	 * @param model - the model
 	 */
 	public BodyPart[] initTorso(ModelBase model) {
 		return null;
@@ -99,30 +88,25 @@ public abstract class NecroEntityBase {
 	/**
 	 * Use this method to initialize all the ModelRenderers for your mobs legs
 	 * 
-	 * @param model
-	 *            - the model
+	 * @param model - the model
 	 */
 	public BodyPart[] initLegs(ModelBase model) {
 		return null;
 	}
 
 	/**
-	 * Use this method to initialize all the ModelRenderers for your mobs left
-	 * arm
+	 * Use this method to initialize all the ModelRenderers for your mobs left arm
 	 * 
-	 * @param model
-	 *            - the model
+	 * @param model - the model
 	 */
 	public BodyPart[] initArmLeft(ModelBase model) {
 		return null;
 	}
 
 	/**
-	 * Use this method to initialize all the ModelRenderers for your mobs right
-	 * arm
+	 * Use this method to initialize all the ModelRenderers for your mobs right arm
 	 * 
-	 * @param model
-	 *            - the model
+	 * @param model - the model
 	 */
 	public BodyPart[] initArmRight(ModelBase model) {
 		return null;
@@ -131,8 +115,7 @@ public abstract class NecroEntityBase {
 	/**
 	 * The method used to initialize the parts and store them in variables
 	 * 
-	 * @param model
-	 *            - the model
+	 * @param model - the model
 	 * @return this
 	 */
 	public NecroEntityBase updateParts(ModelBase model) {
@@ -145,43 +128,40 @@ public abstract class NecroEntityBase {
 	}
 
 	/**
-	 * Used to set the attributes for your necro entity.
-	 * If not used, the minion will get the default values
-	 * @param minion - the minion
-	 * @param location - the bodypart 
+	 * Used to set the attributes for your necro entity. If not used, the minion
+	 * will get the default values
+	 * 
+	 * @param minion   - the minion
+	 * @param location - the bodypart
 	 */
 	public void setAttributes(EntityLivingBase minion, BodyPartLocation location) {
-		/*head[0].setAttributes(2.0D, 32.0D, 0.0D, 0.0D, 0.0D);
-		torso[0].setAttributes(12.0D, 0.0D, 0.0D, 0.0D, 0.0D);
-		armLeft[0].setAttributes(2.0D, 0.0D, 0.0D, 0.5D, 1.0D);
-		armRight[0].setAttributes(2.0D, 0.0D, 0.0D, 0.5D, 1.0D);
-		legs[0].setAttributes(2.0D, 0.0D, 0.0D, 0.699D, 0.0D);*/
+		/*
+		 * head[0].setAttributes(2.0D, 32.0D, 0.0D, 0.0D, 0.0D);
+		 * torso[0].setAttributes(12.0D, 0.0D, 0.0D, 0.0D, 0.0D);
+		 * armLeft[0].setAttributes(2.0D, 0.0D, 0.0D, 0.5D, 1.0D);
+		 * armRight[0].setAttributes(2.0D, 0.0D, 0.0D, 0.5D, 1.0D);
+		 * legs[0].setAttributes(2.0D, 0.0D, 0.0D, 0.699D, 0.0D);
+		 */
 	}
 
 	/**
 	 * Use this method to set the rotation for every bodypart
 	 * 
-	 * @param entity
-	 *            - the entity
-	 * @param part
-	 *            - the current parts being animated
-	 * @param location
-	 *            - the location of the parts
+	 * @param entity   - the entity
+	 * @param part     - the current parts being animated
+	 * @param location - the location of the parts
 	 */
-	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity, BodyPart[] part, BodyPartLocation location) {
+	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity,
+			BodyPart[] part, BodyPartLocation location) {
 	}
 
 	/**
 	 * Called before rendering
 	 * 
-	 * @param entity
-	 *            - the entity
-	 * @param part
-	 *            - the current parts being rendered
-	 * @param location
-	 *            - the location of the parts
-	 * @param model
-	 *            - the model
+	 * @param entity   - the entity
+	 * @param part     - the current parts being rendered
+	 * @param location - the location of the parts
+	 * @param model    - the model
 	 */
 	@SideOnly(Side.CLIENT)
 	public void preRender(Entity entity, BodyPart[] parts, BodyPartLocation location, ModelBase model) {
@@ -190,28 +170,27 @@ public abstract class NecroEntityBase {
 	/**
 	 * Called after rendering
 	 * 
-	 * @param entity
-	 *            - the entity
-	 * @param part
-	 *            - the current parts being rendered
-	 * @param location
-	 *            - the location of the parts
-	 * @param model
-	 *            - the model
+	 * @param entity   - the entity
+	 * @param part     - the current parts being rendered
+	 * @param location - the location of the parts
+	 * @param model    - the model
 	 */
 	@SideOnly(Side.CLIENT)
 	public void postRender(Entity entity, BodyPart[] parts, BodyPartLocation location, ModelBase model) {
 	}
 
 	/**
-	 * Deprecated since 1.1b, replaced the string that was used to get the location with {@link BodypartLocation}
+	 * Deprecated since 1.1b, replaced the string that was used to get the location
+	 * with {@link BodypartLocation}
 	 */
 	@Deprecated
-	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity, BodyPart[] part, String location) {
+	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity,
+			BodyPart[] part, String location) {
 	}
 
 	/**
-	 * Deprecated since 1.1b, replaced the string that was used to get the location with {@link BodypartLocation}
+	 * Deprecated since 1.1b, replaced the string that was used to get the location
+	 * with {@link BodypartLocation}
 	 */
 	@Deprecated
 	@SideOnly(Side.CLIENT)
@@ -219,7 +198,8 @@ public abstract class NecroEntityBase {
 	}
 
 	/**
-	 * Deprecated since 1.1b, replaced the string that was used to get the location with {@link BodypartLocation}
+	 * Deprecated since 1.1b, replaced the string that was used to get the location
+	 * with {@link BodypartLocation}
 	 */
 	@Deprecated
 	@SideOnly(Side.CLIENT)

@@ -46,10 +46,15 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.LanguageRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 
-@Mod(ReferenceNecromancy.MOD_ID)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = {
-        "NecromancyMod" }, packetHandler = PacketHandler.class)
+@Mod(Necromancy.MOD_ID)
 public class Necromancy {
+    // General meta info
+    public static final String MOD_ID = "necromancy2";
+    public static final String MOD_NAME = "Necromancy 2";
+    public static final String MOD_VERSION = "@VERSION@";
+    public static final String MOD_FINGERPRINT = "@FINGERPRINT@";
+
+    // TODO: Initialize network stuff
 
     public static final CreativeTabs tabNecromancy = new CreativeTabNecro(CreativeTabs.getNextID(), "Necromancy", 1)
             .setBackgroundImageName("necro_gui.png");
